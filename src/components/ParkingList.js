@@ -1,7 +1,7 @@
 import React from 'react';
 import ParkingListItem from './ParkingListItem';
+import { connect } from 'react-redux';
 
-const dataUrl = "https://datatank.stad.gent/4/mobiliteit/bezettingparkingsrealtime.json";
 
 export class ParkingList extends React.Component {
   constructor() {
@@ -10,14 +10,7 @@ export class ParkingList extends React.Component {
       parkings: []
     }
   }
-  componentDidMount() {
-    fetch(dataUrl).then(results => {
-      return results.json();
-    }).then(data => {
-      console.log(data);
-      this.setState({parkings : data});
-    });
-  };
+ 
 
   render() {
     return (
@@ -27,7 +20,7 @@ export class ParkingList extends React.Component {
         </div>
         <div className="list-body">
           {
-            this.state.parkings.map((parking) => {
+            this.props.parkings.map((parking) => {
               return <ParkingListItem key={parking.id} {...parking} />;
             })
           }
@@ -38,4 +31,11 @@ export class ParkingList extends React.Component {
   };
 
 }
-export default ParkingList;
+
+const mapStateToProps = (state) => {
+  return {
+    parkings: state.parkings
+  };
+};
+
+export default connect(mapStateToProps)(ParkingList);
