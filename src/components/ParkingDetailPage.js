@@ -9,7 +9,13 @@ const ParkingDetailPage = (props) => {
     <div>
       <Link className="list-item" to="/">Return to dashboard</Link>
      <div>details</div>
-     {props.parking.description}
+     <p>{props.parking.description}</p>
+     <p>{props.parking.contactInfo}</p>
+     {
+            props.parking.openingTimes[0].days.map((day, key) => {
+              return <p key={key}>{day}: {props.parking.openingTimes[0].from} - {props.parking.openingTimes[0].to}</p>;
+            })
+          }
     </div>
   );
 }
