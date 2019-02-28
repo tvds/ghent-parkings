@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export class ParkingListItem extends React.Component {
 
   onHandleParkButton() {
-    
+    //todo
   }
 
   render() {
@@ -16,7 +16,7 @@ export class ParkingListItem extends React.Component {
             {this.props.address} {this.props.parkingStatus.availableCapacity}/{this.props.parkingStatus.totalCapacity}  Open:{this.props.parkingStatus.open + ""}
           </div>
         </Link>
-        <button onClick={onHandleParkButton}>Park</button>
+        <button onClick={this.onHandleParkButton}>Park</button>
       </div>
     );
   };
