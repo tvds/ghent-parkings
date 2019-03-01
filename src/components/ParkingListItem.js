@@ -2,21 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export class ParkingListItem extends React.Component {
-
-  onHandleParkButton() {
-    //todo
-  }
-
   render() {
     return (
-      <div>
+      <div className={this.props.active ? 'parked' : ''} >
         <Link className="list-item" to={`/details/${this.props.id}`}>
           <div>
             <h3 className="list-item__title">{this.props.description}</h3>
-            {this.props.address} {this.props.parkingStatus.availableCapacity}/{this.props.parkingStatus.totalCapacity}  Open:{this.props.parkingStatus.open + ""}
+            {this.props.address} {this.props.active ? this.props.parkingStatus.availableCapacity + 1 : this.props.parkingStatus.availableCapacity}/{this.props.parkingStatus.totalCapacity}  Open:{this.props.parkingStatus.open + ""}
           </div>
         </Link>
-        <button onClick={this.onHandleParkButton}>Park</button>
+        <button onClick={this.props.onPark}>Park</button>
       </div>
     );
   };
