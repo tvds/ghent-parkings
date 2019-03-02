@@ -1,0 +1,10 @@
+.dashboard-left{
+  @media (min-width: $desktop-breakpoint) {
+    float:left;
+    width: 45rem;
+  }
+}
+.dashboard-right{
+  width: 100%; 
+  height: calc(100vh - $header-size);
+}

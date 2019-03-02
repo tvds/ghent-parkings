@@ -11,10 +11,10 @@ import { compose, withProps, withStateHandlers } from "recompose";
 const MapWithPlaces = compose(
   withProps({
     googleMapURL:
-      "https://maps.googleapis.com/maps/api/js?key=&libraries=geometry,drawing,places",
-    loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: "100vh", width: "100%" }} />,
-    mapElement: <div style={{ height: "100%" }} />
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyDPhmjwwm96eMl8pDEO5MJMDmPshhlGfyg&libraries=geometry,drawing,places",
+    loadingElement: <div className="loadingElement" />,
+    containerElement: <div className="containerElement" />,
+    mapElement: <div className="mapElement" />
   }),
   withStateHandlers(
     props => ({
@@ -34,7 +34,7 @@ const MapWithPlaces = compose(
   withScriptjs,
   withGoogleMap
 )(props => (
-  <GoogleMap defaultZoom={props.zoom} defaultCenter={props.center}>
+  <GoogleMap defaultZoom={props.zoom} defaultCenter={props.center} >
     {props.places &&
       props.places.map((place, i) => {
         let lat = parseFloat(place.latitude, 10);
@@ -44,13 +44,14 @@ const MapWithPlaces = compose(
           <Marker
             id={place.id}
             key={place.id}
+            label={i + 1 + ''}
             position={{ lat: lat, lng: lng }}
             title="Click to zoom"
             onClick={props.onToggleOpen.bind(this, i)}
           >
             {props.infoWindows[i].isOpen && (
               <InfoWindow onCloseClick={props.onToggleOpen.bind(i)}>
-                <div>{place.name}</div>
+                <div>{place.description}</div>
               </InfoWindow>
             )}
           </Marker>

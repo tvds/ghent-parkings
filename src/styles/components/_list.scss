@@ -12,6 +12,9 @@
   @media (min-width: $desktop-breakpoint) {
     margin-bottom: $l-size;
   }
+  overflow:auto; 
+
+  height: calc(100vh -75px);
 }
 
 .list-item {
@@ -32,6 +35,10 @@
     padding: $m-size;
   }
 }
+
+.parked {
+  background-color: darken($off-white, 7%);;
+ }
 
 .list-item--message {
   align-items: center;

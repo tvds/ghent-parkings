@@ -11,13 +11,15 @@ export const history = createHistory();
 const AppRouter = () => (
   <Router history={history}>
     <div>
-    <Header />
-      <Switch>
-        <Route path="/" component={ParkingDashboardPage} exact={true} />
-        <Route path="/details/:id" component={ParkingDetailPage} />
-        <Route component={NotFoundPage} />
-        
-      </Switch>
+      <Header />
+      <div className="content">
+        <Switch>
+          <Route path="/" component={ParkingDashboardPage} exact={true} />
+          <Route path="/details/:id" component={ParkingDetailPage} />
+          <Route component={NotFoundPage} />
+
+        </Switch>
+      </div>
     </div>
 
   </Router>

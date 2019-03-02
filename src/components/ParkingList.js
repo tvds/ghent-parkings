@@ -16,9 +16,9 @@ export class ParkingList extends React.Component {
   render() {
     return (
       <div >
-        <div className="list-header">
-          <div className="content-container">ParkingList</div>
-        </div>
+        {/* <div className="list-header">
+          <div className="content-container">Parking list</div>
+        </div> */}
         <div className="list-body">
           {
             this.props.parkings.length === 0 ?
@@ -26,8 +26,8 @@ export class ParkingList extends React.Component {
                 <p>Could not retreive parkings</p>
               )
               : (
-                this.props.parkings.map((parking) => {
-                  return <ParkingListItem key={parking.id} {...parking} onPark={this.handleOnPark.bind(this, parking.id)} active={parking.id === this.state.activeIndex} />;
+                this.props.parkings.map((parking, i) => {
+                  return <ParkingListItem key={parking.id} index={i} {...parking} onPark={this.handleOnPark.bind(this, parking.id)} active={parking.id === this.state.activeIndex} />;
                 })
               )
           }
@@ -40,11 +40,12 @@ export class ParkingList extends React.Component {
 
 
 
-
+/* 
 const mapStateToProps = (state) => {
   return {
     parkings: state.parkings
   };
 };
 
-export default connect(mapStateToProps)(ParkingList);
+export default connect(mapStateToProps)(ParkingList); */
+export default ParkingList;
