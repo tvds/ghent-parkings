@@ -11,7 +11,7 @@ import { compose, withProps, withStateHandlers } from "recompose";
 const MapWithPlaces = compose(
   withProps({
     googleMapURL:
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyDPhmjwwm96eMl8pDEO5MJMDmPshhlGfyg&libraries=geometry,drawing,places",
+      "https://maps.googleapis.com/maps/api/js?key=&libraries=geometry,drawing,places",
     loadingElement: <div className="loadingElement" />,
     containerElement: <div className="containerElement" />,
     mapElement: <div className="mapElement" />
