@@ -1,0 +1,21 @@
+.detail-header__link {
+  border: 1px solid darken($off-white, 7%);
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  padding: $s-size;
+  transition: background .3s ease;
+  color: $grey;
+  &:hover {
+    background: $off-white;
+    cursor: pointer;
+  }
+}
+
+.detail-body {
+
+}
+
+.detail-body__title {
+
+}

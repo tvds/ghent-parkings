@@ -6,7 +6,7 @@ export class ParkingList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      activeIndex : 0
+      activeIndex: 0
     }
   }
 
@@ -15,15 +15,21 @@ export class ParkingList extends React.Component {
   }
   render() {
     return (
-      <div className="content-container">
+      <div >
         <div className="list-header">
-          <div>ParkingList</div>
+          <div className="content-container">ParkingList</div>
         </div>
         <div className="list-body">
           {
-            this.props.parkings.map((parking) => {
-              return <ParkingListItem key={parking.id} {...parking} onPark={this.handleOnPark.bind(this, parking.id )} active={parking.id === this.state.activeIndex} />;
-            })
+            this.props.parkings.length === 0 ?
+              (
+                <p>Could not retreive parkings</p>
+              )
+              : (
+                this.props.parkings.map((parking) => {
+                  return <ParkingListItem key={parking.id} {...parking} onPark={this.handleOnPark.bind(this, parking.id)} active={parking.id === this.state.activeIndex} />;
+                })
+              )
           }
         </div>
       </div>

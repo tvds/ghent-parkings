@@ -4,6 +4,7 @@ import AppRouter from './routers/AppRouter';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import { startSetParkings } from './actions/parkings';
+import 'normalize.css/normalize.css'; 
 import './styles/styles.scss';
 
 const store = configureStore();
