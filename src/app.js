@@ -6,6 +6,10 @@ import configureStore from './store/configureStore';
 import { startSetParkings } from './actions/parkings';
 import 'normalize.css/normalize.css'; 
 import './styles/styles.scss';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faParking, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faParking, faChevronLeft);
 
 const store = configureStore();
 const jsx = (

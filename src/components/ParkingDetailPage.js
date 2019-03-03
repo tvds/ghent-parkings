@@ -2,7 +2,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Map from "./Map";
 
 const ParkingDetailPage = (props) => {
   return (
@@ -10,24 +11,30 @@ const ParkingDetailPage = (props) => {
       <div className="detail-header">
         <Link className="detail-header__link" to="/">
           <div className="content-container">
-            Return to dashboard
+            <FontAwesomeIcon icon={['fas', 'chevron-left']} />  Return to dashboard
         </div>
         </Link>
       </div>
       <div className="detail-body">
         <div className="content-container">
-          <div className="detail-body__title">
-            <h1>
-              {props.parking.description}
-            </h1>
-          </div>
-          <p>{props.parking.contactInfo}</p>
+          <h1 className="detail-body__title">
+            {props.parking.description}
+          </h1>
+          <div className="detail-body__sub-title">{props.parking.contactInfo}</div>
+          <h3>Opening hours</h3>
+
           {
             props.parking.openingTimes[0].days.map((day, key) => {
-              return <p key={key}>{day}: {props.parking.openingTimes[0].from} - {props.parking.openingTimes[0].to}</p>;
+              return <div key={key}>{day}: {props.parking.openingTimes[0].from} - {props.parking.openingTimes[0].to}</div>;
             })
           }
         </div>
+        <Map
+
+          center={{ lat: 51.052757, lng: 3.718902 }}
+          zoom={13}
+          places={[props.parking]}
+        />
       </div>
     </div>
   );

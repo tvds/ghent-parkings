@@ -3,19 +3,17 @@
   border-top: none;
   display: flex;
   flex-direction: column;
-  padding: $s-size;
+  padding: $s-size 0;
   transition: background .3s ease;
   color: $grey;
+  text-decoration: none;
   &:hover {
     background: $off-white;
     cursor: pointer;
   }
 }
 
-.detail-body {
-
-}
-
-.detail-body__title {
-
+.detail-body__sub-title {
+  color: $grey;
+  font-size: $font-size-large;
 }

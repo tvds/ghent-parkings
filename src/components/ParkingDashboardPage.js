@@ -12,7 +12,6 @@ export class ParkingDashboardPage extends React.Component {
         </div>
         <div className='dashboard-right'>
           <Map
-
             center={{ lat: 51.052757, lng: 3.718902 }}
             zoom={13}
             places={this.props.parkings}

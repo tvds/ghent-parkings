@@ -11,7 +11,11 @@ export class ParkingList extends React.Component {
   }
 
   handleOnPark(activeIndex) {
-    this.setState({ activeIndex });
+    if(this.state.activeIndex === activeIndex) {
+      this.setState({ activeIndex : 0 });
+    } else {
+      this.setState({ activeIndex });
+    }
   }
   render() {
     return (

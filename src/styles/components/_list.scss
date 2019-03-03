@@ -52,6 +52,7 @@
 }
 
 .list-item__link {
+  width: 100%;
   text-decoration: none;
   color: $dark-grey;
 }
@@ -64,12 +65,4 @@
 .list-item__sub-title {
   color: $grey;
   font-size: $font-size-small;
-}
-
-.list-item__data {
-  margin: $m-size 0 0 0;
-  @media (min-width: $desktop-breakpoint) {
-    margin: 0;
-    padding-left: $s-size;
-  }
 }
