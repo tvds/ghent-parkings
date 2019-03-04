@@ -1,23 +1,22 @@
 import React from 'react';
 import ParkingListItem from './ParkingListItem';
-import { connect } from 'react-redux';
 
 export class ParkingList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      activeIndex: 0
+      activeParkingId: 0
     }
   }
 
-  handleOnPark(activeIndex) {
-    if(this.state.activeIndex === activeIndex) {
-      this.setState({ activeIndex : 0 });
+  handleOnPark(activeParkingId) {
+    if(this.state.activeParkingId === activeParkingId) {
+      this.setState({ activeParkingId : 0 });
     } else {
-      this.setState({ activeIndex });
+      this.setState({ activeParkingId });
     }
   }
-  
+
   render() {
     return (
       <div>
@@ -29,7 +28,7 @@ export class ParkingList extends React.Component {
               )
               : (
                 this.props.parkings.map((parking, i) => {
-                  return <ParkingListItem key={parking.id} index={i} {...parking} onPark={this.handleOnPark.bind(this, parking.id)} active={parking.id === this.state.activeIndex} />;
+                  return <ParkingListItem key={parking.id} index={i} {...parking} onPark={this.handleOnPark.bind(this, parking.id)} active={parking.id === this.state.activeParkingId} />;
                 })
               )
           }
