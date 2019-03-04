@@ -17,12 +17,9 @@ export class ParkingDashboardPage extends React.Component {
             places={this.props.parkings}
           />
         </div>
-
-
       </div>
     );
   };
-
 }
 
 const mapStateToProps = (state) => {

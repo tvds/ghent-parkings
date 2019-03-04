@@ -17,14 +17,10 @@ const AppRouter = () => (
           <Route path="/" component={ParkingDashboardPage} exact={true} />
           <Route path="/details/:id" component={ParkingDetailPage} />
           <Route component={NotFoundPage} />
-
         </Switch>
       </div>
     </div>
-
   </Router>
 );
-/*<Route path="/detail/:id" component={ParkingDetailPage} />
-<Route component={NotFoundPage} />*/
 
 export default AppRouter;

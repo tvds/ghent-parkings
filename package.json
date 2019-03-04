@@ -7,7 +7,8 @@
   "scripts": {
     "serve": "live-server public/",
     "build": "webpack",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server",
+    "test": "jest --config=jest.config.json"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
@@ -20,22 +21,32 @@
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
     "css-loader": "0.28.4",
+    "dotenv": "^6.2.0",
+    "enzyme": "3.0.0",
+    "enzyme-adapter-react-16": "1.0.0",
+    "enzyme-to-json": "3.0.1",
+    "jest": "20.0.4",
+    "jest-fetch-mock": "^2.1.1",
     "live-server": "^1.2.1",
     "node-sass": "^4.11.0",
     "normalize.css": "7.0.0",
+    "raf": "3.3.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-google-maps": "^9.4.5",
     "react-modal": "2.2.2",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
+    "react-test-renderer": "^16.8.3",
     "recompose": "^0.30.0",
     "redux": "3.7.2",
+    "redux-mock-store": "^1.5.3",
     "redux-thunk": "2.2.0",
     "sass-loader": "^7.1.0",
     "style-loader": "0.18.2",
     "validator": "8.0.0",
     "webpack": "3.1.0",
-    "webpack-dev-server": "2.5.1"
+    "webpack-dev-server": "2.5.1",
+    "whatwg-fetch": "^3.0.0"
   }
 }

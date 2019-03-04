@@ -4,9 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export class ParkingListItem extends React.Component {
   render() {
-    console.log(this)
     return (
-      <div className={this.props.active && 'parked'} >
+      <div className={this.props.active ? 'parked' : ''} >
         <div className="list-item">
           <Link className="list-item__link" to={`/details/${this.props.id}`}>
             <div>
@@ -22,7 +21,6 @@ export class ParkingListItem extends React.Component {
       </div>
     );
   };
-
 }
 
 export default ParkingListItem;

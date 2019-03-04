@@ -6,13 +6,11 @@ export const setParkings = (parkings) => ({
 
 export const startSetParkings = () => {
   return (dispatch) => {  
-    return fetch("https://datatank.stad.gent/4/mobiliteit/bezettingparkingsrealtime.json").then(results => {
-      return results.json();
-    }).then(data => {
-      console.log(data);
+    return fetch("https://datatank.stad.gent/4/mobiliteit/bezettingparkingsrealtime.json")
+    .then(results =>  results.json())
+    .then(data => {
       dispatch(setParkings(data))
-    });
-    
+    }).catch(error => console.log(error));
   };
 }
 

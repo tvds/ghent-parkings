@@ -17,12 +17,10 @@ export class ParkingList extends React.Component {
       this.setState({ activeIndex });
     }
   }
+  
   render() {
     return (
-      <div >
-        {/* <div className="list-header">
-          <div className="content-container">Parking list</div>
-        </div> */}
+      <div>
         <div className="list-body">
           {
             this.props.parkings.length === 0 ?
@@ -39,17 +37,6 @@ export class ParkingList extends React.Component {
       </div>
     );
   };
-
 }
 
-
-
-/* 
-const mapStateToProps = (state) => {
-  return {
-    parkings: state.parkings
-  };
-};
-
-export default connect(mapStateToProps)(ParkingList); */
 export default ParkingList;

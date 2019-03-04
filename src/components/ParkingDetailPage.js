@@ -12,17 +12,16 @@ const ParkingDetailPage = (props) => {
         <Link className="detail-header__link" to="/">
           <div className="content-container">
             <FontAwesomeIcon icon={['fas', 'chevron-left']} />  Return to dashboard
-        </div>
+          </div>
         </Link>
       </div>
       <div className="detail-body">
-        <div className="content-container">
+        <div className="content-container detail-body__data">
           <h1 className="detail-body__title">
             {props.parking.description}
           </h1>
           <div className="detail-body__sub-title">{props.parking.contactInfo}</div>
           <h3>Opening hours</h3>
-
           {
             props.parking.openingTimes[0].days.map((day, key) => {
               return <div key={key}>{day}: {props.parking.openingTimes[0].from} - {props.parking.openingTimes[0].to}</div>;
@@ -30,7 +29,6 @@ const ParkingDetailPage = (props) => {
           }
         </div>
         <Map
-
           center={{ lat: 51.052757, lng: 3.718902 }}
           zoom={13}
           places={[props.parking]}

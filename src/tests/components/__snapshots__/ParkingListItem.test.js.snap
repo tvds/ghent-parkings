@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ParkingListItem correctly 1`] = `
+<div
+  className=""
+>
+  <div
+    className="list-item"
+  >
+    <Link
+      className="list-item__link"
+      replace={false}
+      to="/details/18408"
+    >
+      <div>
+        <h3
+          className="list-item__title"
+        >
+          NaN
+          . 
+          Sint-Michiels
+        </h3>
+        <div>
+          Sint-Michielsplein 8
+          9000 Gent
+        </div>
+        <div>
+          Availability: 
+          93
+           / 
+          450
+           
+        </div>
+      </div>
+    </Link>
+    <button
+      className="button"
+    >
+      Park
+    </button>
+  </div>
+</div>
+`;

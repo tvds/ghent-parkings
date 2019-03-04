@@ -13,6 +13,12 @@
   }
 }
 
+.detail-body__data{
+  @media (max-width: $desktop-breakpoint) {
+    padding: $m-size;
+  }
+}
+
 .detail-body__sub-title {
   color: $grey;
   font-size: $font-size-large;
